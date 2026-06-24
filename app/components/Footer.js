@@ -8,7 +8,7 @@ export default function Footer() {
         
         {/* Brand Mission */}
         <div>
-          <h3 className="text-white font-black tracking-[0.15em] text-sm mb-4">🔮 CHOOMANTAR</h3>
+          <h3 className="text-white font-black tracking-[0.15em] text-sm mb-4">CHOOMANTAR</h3>
           <p className="leading-relaxed font-light text-slate-400">
             Connecting minds, exploring nature, and discovering the timeless beauty of hidden landscapes. Join our premier travel community.
           </p>

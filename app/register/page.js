@@ -42,27 +42,8 @@ export default function Register() {
     }));
   };
 
-  if (submitted) {
-    return (
-      <main className="min-h-[70vh] flex items-center justify-center px-6 bg-slate-950">
-        <div className="max-w-md w-full bg-slate-900/40 backdrop-blur-md border border-emerald-500/30 p-10 rounded-3xl text-center shadow-2xl">
-          <div className="w-16 h-16 bg-emerald-500/10 border border-emerald-500/30 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl text-emerald-400 animate-pulse">
-            ✓
-          </div>
-          <h2 className="text-2xl font-black text-white tracking-wide uppercase mb-3">Request Received</h2>
-          <p className="text-sm text-slate-400 font-light leading-relaxed mb-8">
-            Your premium slot allocation is being prioritized. A community curator will reach out via WhatsApp shortly to finalize your itinerary confirmation.
-          </p>
-          <Link href="/" className="inline-block bg-slate-800 hover:bg-slate-700 text-white font-bold uppercase tracking-widest text-xs py-3.5 px-8 rounded-xl transition duration-300">
-            Return to Base
-          </Link>
-        </div>
-      </main>
-    );
-  }
-
   return (
-    <main className="min-h-screen bg-slate-950 py-20 px-6 flex items-center justify-center">
+    <main className="min-h-screen bg-slate-950 py-20 px-6 flex items-center justify-center relative">
       <div className="max-w-xl w-full bg-slate-900/20 backdrop-blur-md border border-slate-900 p-8 sm:p-12 rounded-3xl shadow-2xl relative overflow-hidden">
         
         {/* Subtle decorative glow in background */}
@@ -184,9 +165,43 @@ export default function Register() {
               Request Spot Assignment
             </button>
           </div>
-
         </form>
       </div>
+
+      {/*  SUCCESS POP-UP OVERLAY MODAL */}
+      {submitted && (
+        <div className="fixed inset-0 bg-slate-950/80 backdrop-blur-md flex items-center justify-center z-50 p-6 animate-fade-in">
+          <div className="max-w-md w-full bg-slate-900 border border-emerald-500/30 p-10 rounded-3xl text-center shadow-2xl relative transform scale-100 transition-all duration-300">
+            
+            {/* Emerald Check Status Badge */}
+            <div className="w-16 h-16 bg-emerald-500/10 border border-emerald-500/30 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl text-emerald-400 animate-pulse">
+              ✓
+            </div>
+            
+            <h2 className="text-2xl font-black text-white tracking-wide uppercase mb-3">Request Received</h2>
+            <p className="text-sm text-slate-400 font-light leading-relaxed mb-8">
+              Your premium slot allocation is being prioritized. A community curator will reach out via WhatsApp shortly to finalize your itinerary confirmation.
+            </p>
+            
+            {/* Action CTAs */}
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <button 
+                onClick={() => setSubmitted(false)}
+                className="bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white font-bold uppercase tracking-widest text-[10px] py-3 px-6 rounded-xl transition duration-200"
+              >
+                Review Details
+              </button>
+              <Link 
+                href="/" 
+                className="bg-emerald-400 hover:bg-emerald-500 text-slate-950 font-black uppercase tracking-widest text-[10px] py-3 px-6 rounded-xl transition duration-200 shadow-lg shadow-emerald-950/20"
+              >
+                Return to Base
+              </Link>
+            </div>
+
+          </div>
+        </div>
+      )}
     </main>
   );
 }
