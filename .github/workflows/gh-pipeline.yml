@@ -56,15 +56,21 @@ jobs:
               sudo usermod -aG docker $USER
             fi
             
-            # 2. Stop and remove the old running container if it exists
+            # 2. Stop and remove any existing container using this name or port
+            echo "Cleaning up existing containers..."
             sudo docker stop choomantar || true
             sudo docker rm choomantar || true
             
-            # 🌟 NEW: Forcefully kill any dangling process occupying port 8080
-            sudo fuser -k 8080/tcp || true
+            # 3. Nuclear option for anything else holding port 8080
+            echo "Clearing port 8080..."
+            sudo fuser -k -n tcp 8080 || true
             
-            # 3. Pull the fresh, verified image from Docker Hub
+            # Small 2-second breather to ensure the OS kernel fully frees up the socket
+            sleep 2
+            
+            # 4. Pull the fresh, verified image from Docker Hub
             sudo docker pull svr77/choomantar:1.0
             
-            # 4. Run the new container live
+            # 5. Run the new container live
+            echo "Deploying new container..."
             sudo docker run -d --name choomantar --restart always -p 8080:3000 svr77/choomantar:1.0
