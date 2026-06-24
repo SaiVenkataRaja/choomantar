@@ -16,8 +16,8 @@ RUN npm run build
 FROM node:20-alpine AS runner
 WORKDIR /app
 
-# 🌟 ADD THIS STEP: Updates system-level libraries and bundled runtime tools natively
-RUN apk update && apk upgrade --no-cache
+# 🌟 UPDATED: Upgrades Alpine OS AND updates global npm to drop old cross-spawn/glob dependencies
+RUN apk update && apk upgrade --no-cache && npm install -g npm@latest
 
 ENV NODE_ENV=production
 
