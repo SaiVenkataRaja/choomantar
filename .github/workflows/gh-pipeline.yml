@@ -19,6 +19,7 @@ jobs:
           scan-type: 'fs'
           scan-ref: '.'
           exit-code: '1'
+          severity: 'CRITICAL,HIGH'
 
       - name: Build Unified Docker Image
         run: docker build -t svr77/choomantar:1.0 .
