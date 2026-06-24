@@ -180,7 +180,7 @@ export default function Register() {
             
             <h2 className="text-2xl font-black text-white tracking-wide uppercase mb-3">Request Received</h2>
             <p className="text-sm text-slate-400 font-light leading-relaxed mb-8">
-              Your premium slot allocation is being prioritized. A community curator will reach out via WhatsApp shortly to finalize your itinerary confirmation.
+              
             </p>
             
             {/* Action CTAs */}
