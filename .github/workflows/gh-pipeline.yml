@@ -60,8 +60,11 @@ jobs:
             sudo docker stop choomantar || true
             sudo docker rm choomantar || true
             
+            # 🌟 NEW: Forcefully kill any dangling process occupying port 8080
+            sudo fuser -k 8080/tcp || true
+            
             # 3. Pull the fresh, verified image from Docker Hub
             sudo docker pull svr77/choomantar:1.0
             
-            # 4. Run the new container live (Maps external public VM port 8080 to internal App port 3000)
+            # 4. Run the new container live
             sudo docker run -d --name choomantar --restart always -p 8080:3000 svr77/choomantar:1.0
