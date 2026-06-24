@@ -24,7 +24,7 @@ export default function Footer() {
             <p className="flex items-center gap-2">
               <span>Instagram :</span>  
               <Link 
-                href="https://teams.microsoft.com/l/message/48:notes/1782290854027?context=%7B%22contextType%22%3A%22chat%22%2C%22oid%22%3A%228%3Aorgid%3A2d088881-541e-4943-b294-c60e3f724e2f%22%7D"
+                href="https://www.instagram.com/the_choomantar?igsh=MXh4ZGRibnBldzBsbg=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white font-medium"
