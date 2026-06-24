@@ -12,12 +12,19 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN npm run build
 
-# --- Stage 3: Runner (Production Security Layer) ---
+# --- Stage 3: Runner (Production Hardening Layer) ---
 FROM node:20-alpine AS runner
 WORKDIR /app
 
-# 🌟 UPDATED: Upgrades Alpine OS AND updates global npm to drop old cross-spawn/glob dependencies
-RUN apk update && apk upgrade --no-cache && npm install -g npm@latest
+# 🌟 UPDATED: Upgrades the OS, then completely strips out npm and yarn binaries/source
+RUN apk update && apk upgrade --no-cache && \
+    rm -rf /usr/local/lib/node_modules/npm \
+           /usr/local/bin/npm \
+           /usr/local/bin/npx \
+           /usr/local/bin/corepack \
+           /opt/yarn-v* \
+           /usr/local/bin/yarn \
+           /usr/local/bin/yarnpkg
 
 ENV NODE_ENV=production
 
