@@ -92,7 +92,7 @@ export default function Home() {
         ))}
 
         <div className="max-w-3xl z-10">
-          <span className="text-sky-400 font-bold tracking-widest uppercase text-xs bg-emerald-500/10 backdrop-blur-md px-4 py-1.5 rounded-full inline-block mb-4 border border-emerald-500/20">
+          <span className="text-sky-600 font-bold tracking-widest uppercase text-xs bg-emerald-500/10 backdrop-blur-md px-4 py-1.5 rounded-full inline-block mb-4 border border-emerald-500/20">
            TRAVEL • EXPLORE • CONNECT
           </span>
           <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 text-white">
