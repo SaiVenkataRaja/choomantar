@@ -92,7 +92,7 @@ export default function Home() {
         ))}
 
         <div className="max-w-3xl z-10">
-          <span className="text-emerald-400 font-bold tracking-widest uppercase text-xs bg-emerald-500/10 backdrop-blur-md px-4 py-1.5 rounded-full inline-block mb-4 border border-emerald-500/20">
+          <span className="text-sky-400 font-bold tracking-widest uppercase text-xs bg-emerald-500/10 backdrop-blur-md px-4 py-1.5 rounded-full inline-block mb-4 border border-emerald-500/20">
            TRAVEL • EXPLORE • CONNECT
           </span>
           <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 text-white">
@@ -101,7 +101,7 @@ export default function Home() {
           <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-8 font-light">
             
           </p>
-          <a href="#trips" className="bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold tracking-wider text-xs uppercase py-4 px-8 rounded-full transition-all duration-300 shadow-xl inline-block transform hover:-translate-y-0.5">
+          <a href="#trips" className="bg-sky-500 hover:bg-sky-600 text-slate-950 font-bold tracking-wider text-xs uppercase py-4 px-8 rounded-full transition-all duration-300 shadow-xl inline-block transform hover:-translate-y-0.5">
             View Seasonal Departures
           </a>
         </div>
