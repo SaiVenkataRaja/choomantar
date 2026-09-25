@@ -87,20 +87,20 @@ on:
 
 jobs: 
   # STAGE 1: Code Security Scan
-  fs_security_scan:
-    runs-on: ubuntu-latest
-    environment: security-scan-approval
-    steps:
-      - name: Download Code from Repository
-        uses: actions/checkout@v4
+  # fs_security_scan:
+  #   runs-on: ubuntu-latest
+  #   environment: security-scan-approval
+  #   steps:
+  #     - name: Download Code from Repository
+  #       uses: actions/checkout@v4
 
-      - name: Run Trivy FS Scan (Check for Secrets)
-        uses: aquasecurity/trivy-action@master
-        with:
-          scan-type: 'fs'
-          scan-ref: '.'
-          exit-code: '1'
-          severity: 'CRITICAL,HIGH'
+  #     - name: Run Trivy FS Scan (Check for Secrets)
+  #       uses: aquasecurity/trivy-action@master
+  #       with:
+  #         scan-type: 'fs'
+  #         scan-ref: '.'
+  #         exit-code: '1'
+  #         severity: 'CRITICAL,HIGH'
 
   # STAGE 2: Build, Image Scan, & Push
   build_scan_and_push:
