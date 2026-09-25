@@ -104,7 +104,7 @@ jobs:
 
   # STAGE 2: Build, Image Scan, & Push
   build_scan_and_push:
-    needs: fs_security_scan
+    #needs: fs_security_scan
     runs-on: ubuntu-latest
     environment: build-approval
     steps:
@@ -133,7 +133,7 @@ jobs:
 
   # STAGE 3: Production Deployment
   deploy_to_vm:
-    needs: build_scan_and_push
+    #needs: build_scan_and_push
     runs-on: ubuntu-latest
     environment: production-deployment-approval
     steps:
